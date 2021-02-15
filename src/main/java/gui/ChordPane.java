@@ -171,6 +171,9 @@ public class ChordPane extends JPanel {
         return strings;
     }
 
+
+
+
     /**
      * Method for clearing all fields
      */
@@ -243,6 +246,31 @@ public class ChordPane extends JPanel {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+
+    public Integer[][] getStringsAsIneteger(){
+        String[][] stringStrings = getStrings();
+        Integer[][] output = new Integer[5][6];
+        try {
+            for (int i = 0; i < stringStrings.length; i++) {
+                for (int y = 0; y < stringStrings[i].length; y++) {
+                    String value = stringStrings[i][y];
+                    if(!(value == null)) {
+                        if (value.contains(" ")) {
+                            value = value.replaceAll("\\s", "");
+                        }
+                        if ((!value.equals(""))) {
+                            output[i][y] = Integer.parseInt(value);
+                        }
+                    }
+                }
+            }
+            return output;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
         }
     }
 }
