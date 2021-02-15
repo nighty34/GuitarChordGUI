@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class CellRenderer  extends JPanel implements  ListCellRenderer<Chord> { //FIXME: JPanel ersetzten mit JTextField?
+public class CellRenderer  extends JPanel implements  ListCellRenderer<Chord> {
 
 
     private JLabel name = new JLabel();
